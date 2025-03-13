@@ -40,7 +40,7 @@ Hand Helm offers a seamless and intuitive way to interact with your computer wit
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/AdityaKuchhal/HandHelm.git
-   cd hand_helm
+   cd HandHelm
    ```
 2. **Install the Dependencies:**
    ```bash
