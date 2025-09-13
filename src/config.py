@@ -21,8 +21,8 @@ CAMERA_HEIGHT = 480
 FPS = 30
 
 # Gesture recognition settings
-GESTURE_CONFIDENCE_THRESHOLD = 0.8
-GESTURE_HOLD_TIME = 0.5  # seconds to hold gesture before action
+GESTURE_CONFIDENCE_THRESHOLD = 0.3  # Lowered from 0.8 for better detection
+GESTURE_HOLD_TIME = 0.3  # seconds to hold gesture before action (reduced from 0.5)
 MAX_GESTURE_HISTORY = 10  # frames to keep for gesture smoothing
 
 # Training parameters for gesture classification model

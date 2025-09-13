@@ -1,78 +1,140 @@
-# Hand Helm
+# Hand Helm - Real-time Hand Gesture Recognition System
 
-Hand Helm is a real-time hand gesture recognition system that enables touchless control of your computer. By leveraging computer vision and machine learning, Hand Helm interprets hand gestures captured from your webcam and maps them to various computer functions such as presentation navigation, media playback, cursor control, and more.
+A computer vision project that uses hand gestures to control your computer, built with OpenCV, MediaPipe, and machine learning.
 
-## Overview
+## 🎯 Features
 
-Hand Helm offers a seamless and intuitive way to interact with your computer without physical contact. It utilizes MediaPipe for hand detection and landmark extraction, combined with a machine learning model built with TensorFlow or PyTorch for gesture classification. The project is designed with modularity and reusability in mind, ensuring clean code structure and easy maintainability.
+- **Real-time Hand Detection**: Uses MediaPipe for robust hand landmark detection
+- **Gesture Recognition**: Machine learning models to classify hand gestures
+- **Computer Control**: Execute actions like media control, presentation navigation, and cursor control
+- **Customizable Actions**: Map gestures to custom computer actions
+- **High Performance**: Optimized for real-time processing
 
-## Features
+## 🎮 Supported Gestures
 
-- **Real-Time Gesture Recognition:**  
-  Capture and process hand gestures in real time using your webcam.
-- **Customizable Gesture Mapping:**  
-  Easily assign specific gestures to control functions like slide navigation, media playback, cursor movement, and more.
-- **Visual Feedback:**  
-  Overlay hand landmarks and recognized gesture labels on the video feed for immediate user feedback.
-- **Optimized & Modular Codebase:**  
-  Designed with separate modules for gesture detection, classification, and utilities to ensure ease of maintenance and future expansion.
+- Fist
+- Open Palm
+- Thumbs Up
+- Thumbs Down
+- Peace Sign
+- OK Sign
+- Point Up
+- Point Down
+- Point Left
+- Point Right
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Programming Language:** Python 3.8+
-- **Computer Vision:** OpenCV, MediaPipe
-- **Machine Learning:** TensorFlow or PyTorch (choose based on your preference)
-- **Data Processing:** NumPy, Pandas
-- **Visualization:** Matplotlib; optionally Streamlit or Tkinter for a graphical user interface
-- **Version Control:** Git
+- **Computer Vision**: OpenCV, MediaPipe
+- **Machine Learning**: TensorFlow, scikit-learn
+- **Data Processing**: NumPy, Pandas
+- **System Control**: pyautogui, keyboard, pynput
+- **Visualization**: Matplotlib, Seaborn
 
-## Recommended PC Specifications
+## 🚀 Quick Start
 
-- **Operating System:** Windows 10/11, Linux, or macOS
-- **CPU:** Modern multi-core processor (e.g., Intel i5/i7 or AMD Ryzen 5/7)
-- **RAM:** Minimum 8GB (16GB recommended)
-- **GPU:** NVIDIA GPU with CUDA support (e.g., GTX 1060 or better) for accelerated model training/inference (optional)
-- **Webcam:** 720p resolution or higher
-- **Storage:** SSD with sufficient space for datasets, models, and project files
+1. **Clone the repository**:
+```bash
+git clone https://github.com/AdityaKuchhal/HandHelm.git
+cd HandHelm
+```
 
-## Installation
+2. **Install dependencies**:
+```bash
+pip install -r requirements.txt
+```
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/AdityaKuchhal/HandHelm.git
-   cd HandHelm
-   ```
-2. **Install the Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. **Run the application**:
+```bash
+python run.py
+```
 
-# Usage
+## 📁 Project Structure
 
-1. **Data Preparation:**
-   If using your own dataset, place your raw images or videos in the designated data folder and use the provided scripts to process and augment your data.
-2. **Training the Model:**
-   Configure hyperparameters and settings in the configuration file, then run:
-   ```bash
-   python src/gesture_classification.py --train
-   ```
-3. **Running the Application:**
-   Launch the application to see real-time gesture recognition:
-   ```bash
-    python src/app.py
-   ```
-4. **Customizing Gesture Actions:**
-   Modify the gesture-to-action mappings in the main application file to suit your needs.
+```
+hand-helm/
+├── data/
+│   ├── raw/           # Raw gesture data (gitignored)
+│   └── processed/     # Preprocessed data (gitignored)
+├── models/            # Trained models (gitignored)
+├── src/
+│   ├── config.py      # Configuration settings
+│   ├── data_collection.py
+│   ├── data_preprocessing.py
+│   ├── gesture_detection.py
+│   ├── gesture_classification.py
+│   ├── computer_control.py
+│   └── app.py         # Main application
+├── scripts/
+│   ├── data_management.py
+│   ├── demo_data_collection.py
+│   └── test_data_collection.py
+├── tests/             # Unit tests
+├── run.py             # Main launcher
+└── requirements.txt   # Dependencies
+```
 
-# Contributing
+## 🎯 Current Status
 
-Contributions are welcome! If you have improvements, new features, or bug fixes, please submit a pull request or open an issue.
+**Phase 1-2 Complete**: Project foundation and data collection system
+- ✅ Basic hand detection with MediaPipe
+- ✅ Data collection pipeline
+- ✅ Data preprocessing system
+- ✅ Machine learning model architecture
+- ✅ Computer control actions
+- ✅ Main application framework
 
-# License
+**Next Steps**: 
+- 🔄 Collect real gesture data
+- 🔄 Train models on real data
+- 🔄 Improve gesture recognition accuracy
+- 🔄 Add more gesture types
+- 🔄 Enhance user interface
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+## 🎮 Usage
 
-# Contact
+### Basic Usage
+```bash
+python run.py
+```
+
+### Data Collection
+```bash
+python src/data_collection.py
+```
+
+### Testing
+```bash
+python scripts/test_data_collection.py
+```
+
+## ⚙️ Configuration
+
+Edit `src/config.py` to customize:
+- Gesture recognition settings
+- Model parameters
+- Action mappings
+- Camera settings
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- MediaPipe for hand detection
+- OpenCV for computer vision
+- TensorFlow for machine learning
+
+## 📧 Contact
 
 For questions or feedback, please open an issue or contact me directly at adityakuchhal76@gmail.com.
 

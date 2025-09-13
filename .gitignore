@@ -45,19 +45,22 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-data/raw/*.jpg
-data/raw/*.png
-data/raw/*.mp4
+data/raw/*.csv
+data/raw/*.json
 data/processed/*.npy
-data/processed/*.csv
+data/processed/*.pkl
+data/processed/*.json
 models/*.h5
 models/*.pkl
-models/*.joblib
+models/*.png
+models/*.json
 
 # Logs
 *.log
 logs/
 
 # Temporary files
+*.tmp
+*.temp
 temp/
 tmp/

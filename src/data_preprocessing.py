@@ -14,7 +14,7 @@ from src.config import (
     SCALER_SAVE_PATH, LABEL_ENCODER_SAVE_PATH,
     VALIDATION_SPLIT, SUPPORTED_GESTURES
 )
-
+  
 class DataPreprocessor:
     """
     A class to preprocess hand gesture data for machine learning.
@@ -305,12 +305,18 @@ class DataPreprocessor:
         """
         if timestamp is None:
             # Find the most recent metadata file
-            metadata_files = [f for f in os.listdir(PROCESSED_DATA_DIR) if f.endswith('_metadata.json')]
+            metadata_files = [f for f in os.listdir(PROCESSED_DATA_DIR) if 'metadata' in f and f.endswith('.json')]
             if not metadata_files:
                 raise FileNotFoundError("No preprocessed data found.")
             
+            # Sort by modification time and get the most recent
+            metadata_files.sort(key=lambda x: os.path.getmtime(os.path.join(PROCESSED_DATA_DIR, x)), reverse=True)
             # Extract timestamp from filename
-            timestamp = metadata_files[0].split('_')[-1].replace('.json', '')
+            filename = metadata_files[0]
+            # The pattern is: processed_data_metadata_20250913_190025.json
+            # Extract the date and time part
+            parts = filename.split('_')
+            timestamp = f"{parts[-2]}_{parts[-1].replace('.json', '')}"
         
         # Load data
         data = {}
