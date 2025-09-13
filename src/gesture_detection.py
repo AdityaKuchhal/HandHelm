@@ -3,8 +3,10 @@ import mediapipe as mp
 import sys
 import os
 
+# Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import (MAX_NUM_HANDS, MIN_DETECTION_CONFIDENCE, MIN_TRACKING_CONFIDENCE)
+
+from src.config import (MAX_NUM_HANDS, MIN_DETECTION_CONFIDENCE, MIN_TRACKING_CONFIDENCE)
 
 class Hand_Detector:
     def __init__(self, 
